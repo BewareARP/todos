@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todos
+  template: 
+      labels:
+        app: todos
+    spec:
+      containers:
+      - name: todos
+        image: gcr.io/arpknowledge/todos:v1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 1234
+
+        
+  
