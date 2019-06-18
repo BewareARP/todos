@@ -6,13 +6,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: todos
-  template: 
+      app:  todos
+  template:
+    metadata:
       labels:
-        app: todos
+        app:  todos
+  
     spec:
       containers:
-      - name: todos
+      - name:  backoffice
         image: gcr.io/arpknowledge/todos:v1
         resources:
           requests:
